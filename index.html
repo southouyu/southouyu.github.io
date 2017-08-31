@@ -268,6 +268,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://southouyu.github.io/2017/09/01/index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="欧余山南">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博文解析">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/01/index/" itemprop="url">欧余山南博客</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T16:14:23Z">
+                2017-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          优秀的人，不是不合群，而是他们合群的人里面没有你
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/01/index/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://southouyu.github.io/2017/08/29/WEB安全/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -322,8 +449,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Diary/" itemprop="url" rel="index">
-                    <span itemprop="name">Diary</span>
+                  <a href="/categories/WEB安全/" itemprop="url" rel="index">
+                    <span itemprop="name">WEB安全</span>
                   </a>
                 </span>
 
@@ -361,32 +488,16 @@
       
         
           
-            <blockquote class="blockquote-center">优秀的人，不是不合群，而是他们合群的人里面没有你</blockquote>
-
-<h1><span id="漏洞描述">漏洞描述</span></h1><blockquote>
-<p>SQL注入是指利用现有应用程序，将(恶意)的SQL命令注入到后台数据库引擎执行的攻击方法。通常 Web 应用程序在后端使用数据库，查询数据库的语言一般是 SQL（各大数据库供应商都有自己的不同版本）。Web应用程序通常会获取用户输入（取自 HTTP 请求），将它并入 SQL 查询中，然后发送到后端数据库。接着应用程序通过处理查询结果，最终向用户显示结果。 如果应用程序对用户（攻击者）的输入处理不够安全，攻击者能够利用 SQL 发起攻击。在此情况下，攻击者能够注入恶意的数据，当该数据并入 SQL 查询中时，将修改原来的查询语句使攻击者能进行敏感数据查询等恶意操作。</p>
-<h1><span id="漏洞危害">漏洞危害</span></h1><p>恶意攻击者能够利用SQL注入攻击造成危害：<br>a）  查看、修改或删除数据库条目和表；<br>b）  篡改网页内容，网页挂马；<br>c）  查询用户的机密信息，包括账户、个人私密信息、交易信息等等；<br>d）  访问数据库系统表，查询数据库及承载服务器敏感信息；<br>e）  获取数据库访问权限，甚至获得DBA权限；<br>f）  运行各种操作系统命令，获取承载主机操作系统和网络的访问权限。</p>
-<h1><span id="产生原理描述">产生原理描述</span></h1><p>如果应用程序使用用户的输入（如用户名和密码）来查询用户帐户的数据库表，以认证用户，而攻击者能够将恶意数据注入查询的用户名部分（和/或密码部分），查询被更改成完全不同的数据查询，能够修改数据库的查询，或在数据库服务器上运行 Shell 命令的查询。<br>下面的代码动态构建和执行一个 SQL 查询，查找与给定名称匹配的 item。查询限定只有当前用户名与item的所有者名称匹配时，才向当前用户显示item。</p>
-<p><table border="1"><tr><td>String user Name = ctx.getAuthenticatedUserName();<br>String user Name =requwst.getParameter(“itemName”);<br>String query = “SELECT*FROM items WHERE owner =” +username +”’AND itemname = “’ +itemName + “ “;<br>ResultSet rs = stmt.execute(query );</td></tr><table><br>代码中的查询原本希望执行如下语句:</table></table></p>
-<p><table border="1"><tr><td>SELECT*FROM items WHERE owner = <username> AND itemname = <itemname>;</itemname></username></td></tr><table><br>然而，因为查询语句是通过连接常量字符串和用户输入的字符串来动态构造，所以只有当itemName中不包含单引号字符时，查询才能正确执行。如果一个用户名为wiley的攻击者输入字符串” ‘name’ OR ‘a’ = ‘a’”作为itemName的值，那么查询会变成如下形式：</table></table></p>
-<p><table border="1"><tr><td>SELECT*FROM items<br>WHERE owner = ‘wiley’<br>AND itemname = ‘name’ OR ‘a’ = ‘a’;</td></tr><table><br>额外的条件OR ‘a’ = ‘a’导致了子句的值总是为true，于是该查询语句从逻辑上来说等价于： </table></table></p>
-<p><table border="1"><tr><td>SELECT * FROM items </td></tr><table><br>如果用户名为wiley的攻击者输入字符串‘name’；DELETE FROM items;–”的值，那么查询语句会变成如下两个查询： </table></table></p>
-<p><table border="1"><tr><td>SELECT*FROM items<br>WHERE owner = ‘wiley’<br>AND itemname = ‘name’<br>DELETE FROM items;<br>    –’</td></tr><table><br>很多数据服务器，包括 Microsoft(R)SQL Server2000，都支持依次执行用分号隔开的多个 SQL 语句。这种攻击语句在 Oracle 和其他不支持批量处理分号隔开的 SQL 语句的数据库服务器上会导致错误，但在允许批量处理的数据库上，这种攻击使得攻击者能够针对数据库执行任意指令。 连字符–将语句的剩余部分当作是注释而不去执行，能够把修改后的查询语句中最后的单引号给注释掉。</table></table></p>
-<h1><span id="解决方案">解决方案</span></h1><p>针对SQL注入攻击的特点，应从以下几个方面进行防范：<br>a）  使用参数化方式进行查询<br>应尽可能避免使用拼接的动态 SQL 语句，而使用参数化方式进行查询。一段示例代码如下所示： </p>
-<p><table border="1"><tr><td>String user = request.getParameter(“username”);<br>String pass = request.getParameter(“password”);<br>String query = “SELECT id FROM users WHERE username=? AND password=?”;<br>PreparedStatement stmt = con.prepareStatement(query);<br>stmt.setString(1, user);<br>stmt.setString(2, pass);<br>ResultSet rs = stmt.executeQuery();<br>if (rs.next())<br>{<br> //  登录成功<br> int id = rs.getInt(1);<br> …<br>}<br>else<br>{<br> //  登录失败<br> …<br>}</td></tr><table><br>b）  检查用户输入的有效性<br>应在服务端验证用户输入的值和类型是否符合程序的预期要求，一般应验证以下内容：<br>1）  必需字段<br>必需字段：检查字段不为空，并且其长度要大于零，不包括行距和后面的空格，示例代码如下: </table></table></p>
-<p><table border="1"><tr><td>// Java 示例-必需字段检查<br>  public Class Validator {<br>   …<br>   public static boolean validateRequired(String value) {<br>     boolean isFieldValid = false;<br>     if (value != null &amp;&amp; value.trim().length() &gt; 0) {<br>       isFieldValid = true;<br>     }<br>     return isFieldValid;<br>   }<br>   …<br>  }<br>  …<br>  String fieldValue = request.getParameter(“fieldName”);<br>  if (Validator.validateRequired(fieldValue)) {<br>   // fieldValue is valid, continue processing request<br>   …<br>  }</td></tr><table><br>2）  字段数据类型<br>字段数据类型检查：检查输入字段类型是否符合预期要求，比如说所有 HTTP 请求参数或 cookie 值的类型都是“字符串”。</table></table></p>
-<p><table border="1"><tr><td>// Java 示例-验证数字字段类型<br> public Class Validator {<br>   …<br>   public static boolean validateInt(String value) {<br>     boolean isFieldValid = false;<br>     try {<br>       Integer.parseInt(value);<br>       isFieldValid = true;<br>     } catch (Exception e) {<br>       isFieldValid = false;<br>     }<br>     return isFieldValid;<br>   }<br>   …<br>  }<br> // Java 示例-将HTTP 请求参数转换为其各自的数据类型<br> …<br>  String fieldValue = request.getParameter(“fieldName”);<br>  if (Validator.validateInt(fieldValue)) {<br>   // convert fieldValue to an Integer<br>   Integer integerValue = Integer.getInteger(fieldValue);<br>   // store integerValue in a request attribute<br>   request.setAttribute(“fieldName”, integerValue);<br>}<br>…<br>// Use the request attribute for further processing<br>Integer integerValue = (Integer)request.getAttribute(“fieldName”);<br>… </td></tr><table><br>3）  字段长度<br>字段长度检查：检查输入字段长度是否符合预期要求。 </table></table></p>
-<p><table border="1"><tr><td><br>// Java 示例-userName 字段的长度是否在 8 至 20 个字符之间<br>public Class Validator {<br>   …<br>   public static boolean validateRange(int value, int min, int max) {<br>     return (value &gt;= min &amp;&amp; value &lt;= max);<br>   }<br>   …<br>  }<br>  …<br>  String fieldValue = request.getParameter(“numberOfChoices”);<br>  if (Validator.validateRequired(fieldValue)) {<br>   if (Validator.validateInt(fieldValue)) {<br>     int numberOfChoices = Integer.parseInt(fieldValue);<br>     if (Validator.validateRange(numberOfChoices, 10, 20)) {<br>       // numberOfChoices is valid, continue processing request<br>       …<br>     }<br>   }<br>  }</td></tr><table><br>4）  字段选项<br>字段选项检查：根据功能需求定义的允许选项来验证用户输入的数据。</table></table></p>
-<p><table border="1"><tr><td><br>// 字段选项示例<br>  public Class Validator {<br>   …<br>   public static boolean validateOption(Object[] options, Object value) {<br>     boolean isValidValue = false;<br>     try {<br>       List list = Arrays.asList(options);<br>       if (list != null) {<br>         isValidValue = list.contains(value);<br>       }<br>     } catch (Exception e) {<br>     }<br>     return isValidValue;<br>   }<br>   …<br>  }<br>  …<br>  // Allowed options<br>  String[] options = {“option1”, “option2”, “option3”);<br>  // Verify that the user selection is one of the allowed options </td></tr></table></p>
-</blockquote>
-<p>  String userSelection = request.getParameter(“userSelection”);<br>  if (Validator.validateOption(options, userSelection)) {<br>   // valid user selection, continue processing request<br>   …<br>  }<table></table></p>
-<blockquote>
-<p>5）  字段模式<br>字段模式检查：检查用户输入是否与功能需求定义的模式匹配。例如，使用以下正则表达式：^[a-zA-Z0-9]*$验证 userName 字段是否符合“仅允许字母数字字符，且不区分大小写”。</p>
-<p><table border="1"><tr><td><br>import org.apache.regexp.RE;<br>import org.apache.regexp.RESyntaxException;<br>public Class Validator {<br>   …<br>   public static boolean matchPattern(String value, String expression) {<br>     boolean match = false;<br>     if (validateRequired(expression)) {<br>         RE r = new RE(expression);<br>        match = r.match(value);<br>     }<br>     return match;<br>   }<br>   …<br>  }<br>  …<br>  // Verify that the userName request parameter is alpha-numeric<br>  String userName = request.getParameter(“userName”);<br>  if (Validator.matchPattern(userName, “^[a-zA-Z0-9]*$”)) {<br>   // userName is valid, continue processing request<br>   …<br> }</td></tr><table><br>6）  对用户输入进行过滤<br>在服务器端对用户输入进行过滤。针对关键字和非法的 HTML 代码等，可以编写函数对其进行检查或过滤。需要检查或过滤的特殊字符至少包含如下表.所示： </table></table></p>
-<p><table><tr><td>特殊字符（不区分大小写）</td><td> 关键字（不区分大小写</td></tr><tr><td>|（竖线符号） <br>&amp; （&amp; 符号） <br>;（分号） <br>$（美元符号） <br>%（百分比符号） <br>@（at 符号） <br>‘（单引号） <br>“（引号）<br> \’（反斜杠转义单引号） <br>\”（反斜杠转义引号）<br> &lt;&gt;（尖括号） <br>()（括号）<br> +（加号）<br>CR（回车符，ASCII 0x0d）<br> LF（换行，ASCII 0x0a） <br>,（逗号） <br> \（反斜杠）  *（星号）</td><td>AndExec<br>Insert<br>Select<br>Delete<br>Update<br>Count<br>Chr<br>Mid<br>Master<br>Truncate<br>Char<br>Declare<br>Backup<br>script</td></tr></table><br>7）  加固应用程序服务器和数据库，利用最低权限账户与数据库连接。<br>配置可信任的IP接入和访问（例如，IPSEC），来控制哪些机器能够与数据库服务器通信。<br>从数据库服务器上移除所有的示例脚本和应用程序。<br>不应使用sa、dba、admin等具备数据库DBA权限的账户，为每一个应用程序的数据库的连接账户使用一个专用的最低权限权账户。如果应用程序仅需要读取访问，应将数据库的访问限制为只读。<br>应从生产数据库中移除未用的存储过程。<br>将对应用程序的访问仅授权给用户创建的存储过程。<br>禁止应用程序访问不必要的系统存储过程。<br>应用程序尽量使用存储过程，利用存储过程，将数据访问抽象化，使用户不能直接访问表或视图。</p>
-</blockquote>
-
-          
+          漏洞描述
+SQL注入是指利用现有应用程序，将(恶意)的SQL命令注入到后台数据库引擎执行的攻击方法。通常 Web 应用程序在后端使用数据库，查询数据库的语言一般是 SQL（各大数据库供应商都有自己的不同版本）。Web应用程序通常会获取用户输入（取自 HTTP 请求），将它并入 SQL 查询中，然后发送到后端数据库。接着应用程序通过处理查询结果，最终向用户显示结果。 如果应用程序对用户（攻击者）的输
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/29/WEB安全/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -468,7 +579,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -550,6 +661,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 

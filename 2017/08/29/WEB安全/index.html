@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="优秀的人，不是不合群，而是他们合群的人里面没有你  漏洞描述 SQL注入是指利用现有应用程序，将(恶意)的SQL命令注入到后台数据库引擎执行的攻击方法。通常 Web 应用程序在后端使用数据库，查询数据库的语言一般是 SQL（各大数据库供应商都有自己的不同版本）。Web应用程序通常会获取用户输入（取自 HTTP 请求），将它并入 SQL 查询中，然后发送到后端数据库。接着应用程序通过处理查询结果，最">
+<meta name="description" content="漏洞描述 SQL注入是指利用现有应用程序，将(恶意)的SQL命令注入到后台数据库引擎执行的攻击方法。通常 Web 应用程序在后端使用数据库，查询数据库的语言一般是 SQL（各大数据库供应商都有自己的不同版本）。Web应用程序通常会获取用户输入（取自 HTTP 请求），将它并入 SQL 查询中，然后发送到后端数据库。接着应用程序通过处理查询结果，最终向用户显示结果。 如果应用程序对用户（攻击者）的输">
 <meta name="keywords" content="ouyu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web安全之SQL注入">
 <meta property="og:url" content="https://southouyu.github.io/2017/08/29/WEB安全/index.html">
 <meta property="og:site_name" content="博文解析">
-<meta property="og:description" content="优秀的人，不是不合群，而是他们合群的人里面没有你  漏洞描述 SQL注入是指利用现有应用程序，将(恶意)的SQL命令注入到后台数据库引擎执行的攻击方法。通常 Web 应用程序在后端使用数据库，查询数据库的语言一般是 SQL（各大数据库供应商都有自己的不同版本）。Web应用程序通常会获取用户输入（取自 HTTP 请求），将它并入 SQL 查询中，然后发送到后端数据库。接着应用程序通过处理查询结果，最">
+<meta property="og:description" content="漏洞描述 SQL注入是指利用现有应用程序，将(恶意)的SQL命令注入到后台数据库引擎执行的攻击方法。通常 Web 应用程序在后端使用数据库，查询数据库的语言一般是 SQL（各大数据库供应商都有自己的不同版本）。Web应用程序通常会获取用户输入（取自 HTTP 请求），将它并入 SQL 查询中，然后发送到后端数据库。接着应用程序通过处理查询结果，最终向用户显示结果。 如果应用程序对用户（攻击者）的输">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-31T07:07:19.362Z">
+<meta property="og:updated_time" content="2017-08-31T08:49:15.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web安全之SQL注入">
-<meta name="twitter:description" content="优秀的人，不是不合群，而是他们合群的人里面没有你  漏洞描述 SQL注入是指利用现有应用程序，将(恶意)的SQL命令注入到后台数据库引擎执行的攻击方法。通常 Web 应用程序在后端使用数据库，查询数据库的语言一般是 SQL（各大数据库供应商都有自己的不同版本）。Web应用程序通常会获取用户输入（取自 HTTP 请求），将它并入 SQL 查询中，然后发送到后端数据库。接着应用程序通过处理查询结果，最">
+<meta name="twitter:description" content="漏洞描述 SQL注入是指利用现有应用程序，将(恶意)的SQL命令注入到后台数据库引擎执行的攻击方法。通常 Web 应用程序在后端使用数据库，查询数据库的语言一般是 SQL（各大数据库供应商都有自己的不同版本）。Web应用程序通常会获取用户输入（取自 HTTP 请求），将它并入 SQL 查询中，然后发送到后端数据库。接着应用程序通过处理查询结果，最终向用户显示结果。 如果应用程序对用户（攻击者）的输">
 
 
 
@@ -321,8 +321,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Diary/" itemprop="url" rel="index">
-                    <span itemprop="name">Diary</span>
+                  <a href="/categories/WEB安全/" itemprop="url" rel="index">
+                    <span itemprop="name">WEB安全</span>
                   </a>
                 </span>
 
@@ -358,9 +358,7 @@
       
 
       
-        <blockquote class="blockquote-center">优秀的人，不是不合群，而是他们合群的人里面没有你</blockquote>
-
-<h1><span id="漏洞描述">漏洞描述</span></h1><blockquote>
+        <h1><span id="漏洞描述">漏洞描述</span></h1><blockquote>
 <p>SQL注入是指利用现有应用程序，将(恶意)的SQL命令注入到后台数据库引擎执行的攻击方法。通常 Web 应用程序在后端使用数据库，查询数据库的语言一般是 SQL（各大数据库供应商都有自己的不同版本）。Web应用程序通常会获取用户输入（取自 HTTP 请求），将它并入 SQL 查询中，然后发送到后端数据库。接着应用程序通过处理查询结果，最终向用户显示结果。 如果应用程序对用户（攻击者）的输入处理不够安全，攻击者能够利用 SQL 发起攻击。在此情况下，攻击者能够注入恶意的数据，当该数据并入 SQL 查询中时，将修改原来的查询语句使攻击者能进行敏感数据查询等恶意操作。</p>
 <h1><span id="漏洞危害">漏洞危害</span></h1><p>恶意攻击者能够利用SQL注入攻击造成危害：<br>a）  查看、修改或删除数据库条目和表；<br>b）  篡改网页内容，网页挂马；<br>c）  查询用户的机密信息，包括账户、个人私密信息、交易信息等等；<br>d）  访问数据库系统表，查询数据库及承载服务器敏感信息；<br>e）  获取数据库访问权限，甚至获得DBA权限；<br>f）  运行各种操作系统命令，获取承载主机操作系统和网络的访问权限。</p>
 <h1><span id="产生原理描述">产生原理描述</span></h1><p>如果应用程序使用用户的输入（如用户名和密码）来查询用户帐户的数据库表，以认证用户，而攻击者能够将恶意数据注入查询的用户名部分（和/或密码部分），查询被更改成完全不同的数据查询，能够修改数据库的查询，或在数据库服务器上运行 Shell 命令的查询。<br>下面的代码动态构建和执行一个 SQL 查询，查找与给定名称匹配的 item。查询限定只有当前用户名与item的所有者名称匹配时，才向当前用户显示item。</p>
@@ -438,6 +436,22 @@
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/01/index/" rel="prev" title="欧余山南博客">
+                欧余山南博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
       
@@ -512,7 +526,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -610,6 +624,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
